@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Meus Projetos</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .projeto { border: 1px solid #ccc; padding: 10px; margin-bottom: 15px; border-radius: 8px; }
+        .projeto h2 { margin: 0; }
+    </style>
+</head>
+<body>
+    <h1>Meus Projetos</h1>
+
+    <div th:each="proj : ${projetos}" class="projeto">
+        <h2 th:text="${proj.nome}">Nome do Projeto</h2>
+        <p th:text="${proj.descricao}">Descrição do projeto...</p>
+        <p><a th:href="${proj.link}" target="_blank">Ver no GitHub</a></p>
+    </div>
+
+    <a href="/">Voltar para Home</a>
+</body>
+</html>
